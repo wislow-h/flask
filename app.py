@@ -1,14 +1,14 @@
 from flask import Flask, render_template, request, redirect, send_file
-from extractors.remoteok import extract_remoteok_jobs
 from extractors.wwr import extract_wwr_jobs
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
 from file import save_file
+# from extractors.remoteok import extract_remoteok_jobs
+# from selenium import webdriver
+# from selenium.webdriver.chrome.options import Options
 
-options = Options()
-options.add_argument("--no-sandbox")
-options.add_argument("--disable-dev-shm-usage")
-browser = webdriver.Chrome(options=options)
+# options = Options()
+# options.add_argument("--no-sandbox")
+# options.add_argument("--disable-dev-shm-usage")
+# browser = webdriver.Chrome(options=options)
 
 app = Flask("Jean-Job-Scrapper")
 db = {}
@@ -30,9 +30,10 @@ def search():
     jobs = db[search_keyword]
   else:
     wwr_jobs = extract_wwr_jobs(search_keyword)
-    remoteok_jobs = extract_remoteok_jobs(browser, search_keyword)
-    jobs = wwr_jobs + remoteok_jobs
-    db[search_keyword] = jobs
+    # remoteok_jobs = extract_remoteok_jobs(browser, search_keyword)
+    # jobs = wwr_jobs + remoteok_jobs
+    # db[search_keyword] = jobs
+    db[search_keyword] = wwr_jobs
 
   return render_template('search.html', keyword=search_keyword, jobs=jobs)
 
