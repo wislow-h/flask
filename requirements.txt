@@ -9,3 +9,13 @@ markupsafe==2.1.1 ; python_version >= '3.7'
 setuptools==65.6.3 ; python_version >= '3.7'
 werkzeug==2.2.2 ; python_version >= '3.7'
 zipp==3.11.0 ; python_version >= '3.7'
+
+numpy == 1.22.2
+urllib3 == 1.26.15
+poetry == 1.1.13
+range == 1.0.0
+requests == 2.31.0
+beautifulsoup4 == 4.12.2
+bs4 == 0.0.1
+selenium == 4.10
+Extractor == 0.5
