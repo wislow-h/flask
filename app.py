@@ -32,8 +32,8 @@ def search():
     wwr_jobs = extract_wwr_jobs(search_keyword)
     # remoteok_jobs = extract_remoteok_jobs(browser, search_keyword)
     # jobs = wwr_jobs + remoteok_jobs
-    # db[search_keyword] = jobs
-    db[search_keyword] = wwr_jobs
+    jobs = wwr_jobs
+    db[search_keyword] = jobs
 
   return render_template('search.html', keyword=search_keyword, jobs=jobs)
 
